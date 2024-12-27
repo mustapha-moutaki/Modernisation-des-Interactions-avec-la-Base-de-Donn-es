@@ -1,3 +1,6 @@
+
+CREATE DATABASE players_new_db;
+use players_new_db;
 CREATE TABLE players(
     player_id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50),
