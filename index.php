@@ -8,7 +8,7 @@ $db = new Database();
 // CREATE: Insert a new record
 $db->create("players", [
     "name" => "naymar",
-    "position" => "st",
+    "position" => "cbl",
     "photo" =>'img2.jpg',
     "nationality_id" => '13',
     "club_id" => '24',
@@ -34,23 +34,59 @@ $updated = $db->update("players", "name", "gon", "player_id", 68);
 
 // Display each player on a new line
 foreach ($players as $player) {
-    echo "<br>"."player_id: "
-            . $player['player_id']
-            . " | - Name: " . $player['name'] 
-            . " | - position: " . $player['position']
-            . " | - photo: " .$player['photo']
-            . " | - nationality_id: " .$player['nationality_id']
-            . " | - club_id: " .$player['club_id']
-            . " | - rating: " .$player['rating']
-            . " | - pace: " .$player['pace']
-            . " | - shooting: " .$player['shooting']
-            . " | - passing: " .$player['passing'] 
-            . " | - dribling: " .$player['dribling'] 
-            . " | - defending: " .$player['defending']
-            . " | - physical:| " .$player['physical'] .
+    // echo "<br>"."player_id: "
+    //         . $player['player_id']
+    //         . " | - Name: " . $player['name'] 
+    //         . " | - position: " . $player['position']
+    //         . " | - photo: " .$player['photo']
+    //         . " | - nationality_id: " .$player['nationality_id']
+    //         . " | - club_id: " .$player['club_id']
+    //         . " | - rating: " .$player['rating']
+    //         . " | - pace: " .$player['pace']
+    //         . " | - shooting: " .$player['shooting']
+    //         . " | - passing: " .$player['passing'] 
+    //         . " | - dribling: " .$player['dribling'] 
+    //         . " | - defending: " .$player['defending']
+    //         . " | - physical:| " .$player['physical'] .
     
-    "<br>";
+    // "<br>";
+
+
+    echo "<table border='1' style='width:100%; text-align:left;'>";
+echo "<tr>
+        <th>Player ID</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Photo</th>
+        <th>Nationality ID</th>
+        <th>Club ID</th>
+        <th>Rating</th>
+        <th>Pace</th>
+        <th>Shooting</th>
+        <th>Passing</th>
+        <th>Dribbling</th>
+        <th>Defending</th>
+        <th>Physical</th>
+      </tr>";
+
+    echo "<tr>
+            <td>" . $player['player_id'] . "</td>
+            <td>" . $player['name'] . "</td>
+            <td>" . $player['position'] . "</td>
+            <td><img src='" . $player['photo'] . "' alt='" . $player['name'] . "' style='width:50px;'></td>
+            <td>" . $player['nationality_id'] . "</td>
+            <td>" . $player['club_id'] . "</td>
+            <td>" . $player['rating'] . "</td>
+            <td>" . $player['pace'] . "</td>
+            <td>" . $player['shooting'] . "</td>
+            <td>" . $player['passing'] . "</td>
+            <td>" . $player['dribling'] . "</td>
+            <td>" . $player['defending'] . "</td>
+            <td>" . $player['physical'] . "</td>
+          </tr>";echo "</table>";
 }
+
+
 
 ?>
 
